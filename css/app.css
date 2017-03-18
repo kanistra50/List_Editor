@@ -1,0 +1,63 @@
+
+body {
+
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}
+
+.header {
+    margin: 0;
+    background-color: darkmagenta;
+    font-family: "Segoe UI Light", SansSerif ;
+    color: ghostwhite;
+    padding: 1px 0;
+
+}
+
+.container {
+    position: relative;
+    top: 100px;
+    color: dimgrey;
+    width: 600px !important;
+}
+
+.container h4 {
+    color: darkmagenta;
+}
+
+.control {
+    position: relative;
+    top: 15px;
+}
+
+td:first-child {
+    width: 550px !important;
+    text-align: left;
+}
+
+td:first-child:hover {
+    color: dimgrey;
+    text-decoration: none;
+    cursor: default;
+}
+
+td:hover {
+    color: darkmagenta;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.form-body {
+    position: relative;
+    top: 50px;
+    width: 500px;
+}
+
+.form-controll {
+    position: relative;
+    top: 100px;
+}
+
+div a:hover {
+    cursor: pointer;
+}
