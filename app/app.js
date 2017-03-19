@@ -1,4 +1,4 @@
-var app = angular
+var module = angular
     .module("test", [
         'ui.router'
     ])
@@ -9,62 +9,52 @@ var app = angular
               .state('list', {
                   url: '/list',
                   templateUrl: 'templates/list.html',
-                  controller: function($scope){
-                      $scope.items = [
-                              {id: 12345, value: "First clever thing"},
-                              {id: 51234, value: "Second clever thing"}
-                          ];
-                      $scope.removeItem = function(item) {
-                          $scope.items.splice($scope.items.indexOf(item), 1);
-                      };
-                  }
-
-
-                  //     {     //LocalStorage
-                  //     itemsList: [
-                  //         {id: 12345, value: "First clever thing"},
-                  //         {id: 51234, value: "Second clever thing"}
-                  //     ]
-                  // }
+                  controller: "listController",
+                  controllerAs: "listCtrl"
               })
               .state('add', {
                   url: '/list/add',
                   templateUrl: 'templates/form.html',
                   controller: "addController",
-                  controllerAs:"addCtrl"
+                  controllerAs: "addCtrl"
               })
               .state('edit', {
                   url: '/list/edit/:id',
                   templateUrl: 'templates/form.html',
                   controller: "editController",
-                  controllerAs:"editCtrl"
-              })
-         ;
-    }]);
-    // .controller('listController', function(itemsList, $state, $location) {
-    //     this.items = [
-    //         {id: 12345, value: "First clever thing"},
-    //         {id: 51234, value: "Second clever thing"}
-    //     ];
-    // })
-    // .controller('addController', function() {
-    //
-    // });
+                  controllerAs: "editCtrl"
+              });
+    }])
+    .controller('addController', function($scope) {
+        function getId() {
+            var id = 0;
+            do {
+                id = Math.random();
+            } while (id === 1 || id === 0);
+            return parseInt(id*100000000);
+        }
 
-// .controller('ListCtrl', function($scope){
-//         $scope.shoppingList = [
-//             {name: 'Milk'},
-//             {name: 'Eggs'},
-//             {name: 'Bread'},
-//             {name: 'Cheese'},
-//             {name: 'Ham'},
-//         ];
-//   $scope.selectItem = function (selectedItem) {
-//       ($scope.shoppingList).each(function(item){
-//           item.selected = false;
-//           if (selectedItem === item) {
-//               selectedItem.selected = true;
-//           }
-//       });
-//   };
-// })
+        $scope.addItem = function() {
+            console.log($scope.newItem);
+            var newId = getId();
+            $scope.items.push(
+                {id: newId, value: $scope.newItem }
+            );
+
+        }
+    }).controller('listController', function($scope) {
+        $scope.items = [
+            {id: 12345678, value: "First clever thing"},
+            {id: 51234876, value: "Second clever thing"}
+        ];
+        $scope.removeItem = function(item) {
+            if (confirm("Removing of string  - " + item.value +" ?")) {
+                $scope.items.splice($scope.items.indexOf(item), 1);
+            }
+        };
+        $scope.editItem = function(item) {
+            alert(item.value);
+            $scope.newItem = item.value;
+        };
+    });
+
