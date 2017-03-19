@@ -1,11 +1,13 @@
-<h4>Add or Edit Item</h4>
-<div class="form-body">
-    <form>
-        <span>Item value: </span>
-        <input type="text" placeholder="Enter some text..." autofocus>
-    </form>
-</div>
-<div class="form-controll">
-    <button class="btn btn-success" type="button">Save</button>
-    <a ui-sref="#"> << Go back</a>
+<div>
+    <h4>Add or Edit Item</h4>
+    <div class="form-body" >
+        <form>
+            <span>Item value: </span>
+            <input type="text" ng-model="newItem" placeholder="Enter some text..." autofocus>
+        </form>
+    </div>
+    <div class="form-controll">
+        <button class="btn btn-success" ng-click="addItem()">Save</button>
+        <a href="#"> << Go back</a>
+    </div>
 </div>
