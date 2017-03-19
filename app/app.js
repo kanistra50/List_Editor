@@ -53,7 +53,7 @@ var module = angular
             }
         };
         $scope.editItem = function(item) {
-            alert(item.value);
+            //alert(item.value);
             $scope.newItem = item.value;
         };
     });
