@@ -30,6 +30,15 @@ body {
     top: 15px;
 }
 
+.control a {
+    color: dimgrey;
+    text-decoration: none;
+}
+
+.control a:hover  {
+    color: darkmagenta;
+}
+
 td:first-child {
     width: 550px !important;
     text-align: left;
