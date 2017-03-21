@@ -1,20 +1,18 @@
-<div>
-    <h4>List interface</h4>
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>Item Name</th><th></th><th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="item in items">
-            <td>{{ item.value }}</td>
-            <td ng-click="editItem(item)"><a ui-sref="edit">Edit</a></td>
-            <td ng-click="removeItem(item)">Remove</td>
-        </tr>
-        </tbody>
-    </table>
-    <div class="control">
-        <a ui-sref="add">Add new >></a>
-    </div>
+<h4>List interface</h4>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Item Name</th><th></th><th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in items">
+        <td>{{ item.value }}</td>
+        <td ><a ui-sref="edit({itemId: item.id})" ng-click="edit(item)">Edit</a></td>
+        <td ng-click="remove(item)">Remove</td>
+    </tr>
+    </tbody>
+</table>
+<div class="control">
+    <a ui-sref="add" ng-click="add()">Add new >></a>
 </div>
