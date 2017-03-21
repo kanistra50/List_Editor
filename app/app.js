@@ -1,60 +1,95 @@
-var module = angular
-    .module("test", [
-        'ui.router'
-    ])
-    .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
-        $urlRouterProvider.otherwise('/list');
+var module = angular.module("test");
 
-        $stateProvider
-              .state('list', {
-                  url: '/list',
-                  templateUrl: 'templates/list.html',
-                  controller: "listController",
-                  controllerAs: "listCtrl"
-              })
-              .state('add', {
-                  url: '/list/add',
-                  templateUrl: 'templates/form.html',
-                  controller: "addController",
-                  controllerAs: "addCtrl"
-              })
-              .state('edit', {
-                  url: '/list/edit/:id',
-                  templateUrl: 'templates/form.html',
-                  controller: "editController",
-                  controllerAs: "editCtrl"
-              });
-    }])
-    .controller('addController', function($scope) {
+module
+    .controller('defaultController', function($scope) {
+
+        $scope.items = [];
+
+        (function(){
+            if (!localStorage.getItem("itemsList")) {
+                localStorage.setItem("itemsList", [
+                        [12345678, "First clever thing"],
+                        [51234876,"Second clever thing"]
+                    ]
+                );
+            }
+            var data = localStorage.getItem("itemsList").split(",");
+            console.log(data);
+            var len = data.length;
+            for (var i=0; i<len; i++) {
+                $scope.items.push({id: data[i], value: data[i+1]});
+                i++;
+            }
+
+        })();
+
+        var Id, num;
+
         function getId() {
-            var id = 0;
+            var random = 0;
             do {
-                id = Math.random();
-            } while (id === 1 || id === 0);
-            return parseInt(id*100000000);
+                random = Math.random();
+            } while (random === 1 || random === 0);
+            return parseInt(random*100000000);
         }
 
-        $scope.addItem = function() {
-            console.log($scope.newItem);
-            var newId = getId();
-            $scope.items.push(
-                {id: newId, value: $scope.newItem }
-            );
-
-        }
-    }).controller('listController', function($scope) {
-        $scope.items = [
-            {id: 12345678, value: "First clever thing"},
-            {id: 51234876, value: "Second clever thing"}
-        ];
-        $scope.removeItem = function(item) {
+        $scope.remove = function(item) {
             if (confirm("Removing of string  - " + item.value +" ?")) {
                 $scope.items.splice($scope.items.indexOf(item), 1);
-            }
+            };
+            var arr=[];
+            var len = $scope.items.length;
+            for (var i=0; i<len; i++) {
+                arr[i] = [$scope.items[i].id, $scope.items[i].value];
+            };
+            localStorage.setItem("itemsList", arr);
         };
-        $scope.editItem = function(item) {
-            //alert(item.value);
-            $scope.newItem = item.value;
+    
+        $scope.add = function() {
+            $scope.inInput = "";
+            console.log("text in input: " + $scope.inInput);
+            Id = 0;
         };
+    
+        $scope.edit = function(item) {
+            //console.log(item.value);
+            $scope.inInput = item.value;
+            Id = item.id;
+            num = $scope.items.indexOf(item);
+        };
+
+        $scope.save = function(text) {
+
+            if (text) {
+                if (!Id ) {
+
+                    var newId = getId();
+                    $scope.items.push(
+                        {id: newId, value: text}
+                    );
+
+                    //console.log("add new item with text: "+ text);
+
+                }
+                else {
+                    $scope.items[num].value = text;
+                    //console.log("item was modified");
+                }
+            } else {
+                alert('Please write something !');
+            };
+
+            var arr=[];
+            var len = $scope.items.length;
+            for (var i=0; i<len; i++) {
+                arr[i] = [$scope.items[i].id, $scope.items[i].value];
+            };
+            localStorage.setItem("itemsList", arr);
+
+        };
+
+
+        console.log("Loaded");
+
     });
 
