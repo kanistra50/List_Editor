@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="test">
 <head>
     <meta charset="utf-8">
     <title>List Editor</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.css">
 </head>
-<body>
-<div class="header">
-    <h1>List Editor Application </h1>
-</div>
-<div class="container-fluid">
+<body ng-controller="defaultController">
 
-    <div class="container" ng-app="test">
-        <div ui-view></div>
+        <div class="header">
+            <h1>List Editor Application </h1>
+        </div>
+        <div class="container-fluid">
+            <div class="container" >
 
-    </div>
+                <div ui-view ></div>
 
-  </div>
+            </div>
+        </div>
+
   <script type="text/javascript" src="vendor/angular/angular.js"></script>
   <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+
+  <script type="text/javascript" src="app/config/config.ui-router.js"></script>
+
   <script type="text/javascript" src="app/app.js"></script>
 </body>
 </html>
