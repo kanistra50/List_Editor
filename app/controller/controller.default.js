@@ -1,5 +1,5 @@
 module
-    .controller('defaultController', function($scope) {
+    .controller('defaultController',['$scope', function($scope) {
 
         $scope.items = [];
 
@@ -18,10 +18,12 @@ module
             this.setData = function(lists) {
                 localStorage.setItem(this.name, JSON.stringify(lists));
             };
+
         };
 
         var myStorage = myStorage || new Storage();
 /////////////////////////////////////////////////////////////////
+
         var data = myStorage.getData();
         if (!data) {
             myStorage.setData( [
@@ -45,12 +47,13 @@ module
             if (confirm("Removing of string  - " + item.value +" ?")) {
                 $scope.items.splice($scope.items.indexOf(item), 1);
             }
+
             myStorage.setData($scope.items);
         };
 
         $scope.add = function() {
             $scope.inInput = "";
-            //console.log("text in input: " + $scope.inInput);
+            console.log("text in input: " + $scope.inInput);
             Id = 0;
         };
 
@@ -63,6 +66,8 @@ module
 
         $scope.save = function(text) {
             if (text) {
+
+
                 if (!Id ) {
                     var newId = getId();
                     $scope.items.push(
@@ -77,8 +82,10 @@ module
                 myStorage.setData($scope.items);
             } else {
                 alert('Please write something !');
+
+                }
+
             }
-        };
 
         console.log("Controller loaded");
-    });
+}]);
