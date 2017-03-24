@@ -15,14 +15,9 @@ module
                 return JSON.parse(data);
             };
 
-            this._setter = function(lists) {
+            this.setData = function(lists) {
                 localStorage.setItem(this.name, JSON.stringify(lists));
             };
-
-            this.setData = function (arr) {
-                arr[0] ? this._setter(arr) : console.log("CAUTION: Attempt to push empty array in Storage");
-            };
-
         };
 
         var myStorage = myStorage || new Storage();
