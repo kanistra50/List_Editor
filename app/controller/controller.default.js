@@ -45,13 +45,12 @@ module
             if (confirm("Removing of string  - " + item.value +" ?")) {
                 $scope.items.splice($scope.items.indexOf(item), 1);
             }
-            console.log($scope.items);
             myStorage.setData($scope.items);
         };
 
         $scope.add = function() {
             $scope.inInput = "";
-            console.log("text in input: " + $scope.inInput);
+            //console.log("text in input: " + $scope.inInput);
             Id = 0;
         };
 
