@@ -20,7 +20,7 @@ module
             };
 
             this.setData = function (arr) {
-                arr[0] ? this._setter(arr) : console.log("CAUTION: Empty array in Storage");
+                arr[0] ? this._setter(arr) : console.log("CAUTION: Attempt to push empty array in Storage");
             };
 
         };
@@ -50,7 +50,7 @@ module
             if (confirm("Removing of string  - " + item.value +" ?")) {
                 $scope.items.splice($scope.items.indexOf(item), 1);
             }
-
+            console.log($scope.items);
             myStorage.setData($scope.items);
         };
 
