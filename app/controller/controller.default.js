@@ -58,7 +58,7 @@ module
         };
 
         $scope.edit = function(item) {
-            console.log(item.value);
+            //console.log(item.value);
             $scope.inInput = item.value;
             Id = item.id;
             num = $scope.items.indexOf(item);
