@@ -25,7 +25,7 @@ module
 /////////////////////////////////////////////////////////////////
 
         var data = myStorage.getData();
-        if (!data) {
+        if (!data[0]) {
             myStorage.setData( [
                     {id: 12345678, value: "First clever thing"},
                     {id: 51234876, value: "Second clever thing"}
