@@ -1,6 +1,6 @@
-var module = angular.module("test")
-
-module
+angular.module("test", [
+    'ui.router'
+])
   .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
         $urlRouterProvider.otherwise('/list');
 
