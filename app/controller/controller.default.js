@@ -25,7 +25,7 @@ angular.module("test")
 /////////////////////////////////////////////////////////////////
 
         var data = myStorage.getData();
-        if (data[0] !== undefined) {
+        if (data !== undefined) {
             myStorage.setData( [
                     {id: 12345678, value: "First clever thing"},
                     {id: 51234876, value: "Second clever thing"}
