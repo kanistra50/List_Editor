@@ -12,7 +12,9 @@ angular.module("test")
 
             this.getData = function() {
                 var data = localStorage.getItem(this.name);
+                console.log(data);
                 return JSON.parse(data);
+
             };
 
             this.setData = function(lists) {
@@ -25,7 +27,8 @@ angular.module("test")
 /////////////////////////////////////////////////////////////////
 
         var data = myStorage.getData();
-        if (data !== undefined) {
+        if (!data[0]) {
+            console.log(data);
             myStorage.setData( [
                     {id: 12345678, value: "First clever thing"},
                     {id: 51234876, value: "Second clever thing"}
@@ -58,7 +61,7 @@ angular.module("test")
         };
 
         $scope.edit = function(item) {
-            //console.log(item.value);
+            console.log(item.value);
             $scope.inInput = item.value;
             Id = item.id;
             num = $scope.items.indexOf(item);
@@ -87,5 +90,7 @@ angular.module("test")
 
             }
 
+
         console.log("Controller loaded");
+
 }]);
