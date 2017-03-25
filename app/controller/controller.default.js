@@ -1,4 +1,4 @@
-module
+angular.module("test")
     .controller('defaultController',['$scope', function($scope) {
 
         $scope.items = [];
