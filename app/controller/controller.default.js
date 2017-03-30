@@ -27,7 +27,7 @@ angular.module("test")
 /////////////////////////////////////////////////////////////////
 
         var data = myStorage.getData();
-        if (!data[0]) {
+        if (!data || !data[0]) {
             console.log(data);
             myStorage.setData( [
                     {id: 12345678, value: "First clever thing"},
