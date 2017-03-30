@@ -7,7 +7,7 @@ body {
 .header {
     margin: 0;
     background-color: darkmagenta;
-    font-family: "Segoe UI Light", SansSerif ;
+    font-family: "Segoe UI Light", SansSerif, 'Quicksand', sans-serif ;
     color: ghostwhite;
     padding: 1px 0;
     box-shadow: 0 2px 10px dimgrey;
