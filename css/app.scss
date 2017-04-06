@@ -1,0 +1,76 @@
+$white: ghostwhite;
+$grey: dimgrey;
+$magenta: darkmagenta;
+
+$quicksand: 'Quicksand', sans-serif;
+$segoe: "Segoe UI Light", SansSerif;
+
+$from-top: 50px;
+
+body {
+    font-family: $quicksand;
+    text-align: center;
+}
+
+.header {
+    margin: 0;
+    background-color: $magenta;
+    font-family: $segoe, $quicksand;
+    color: $white;
+    padding: 1px 0;
+    box-shadow: 0 2px 10px $grey;
+}
+
+.container {
+    position: relative;
+    top: $from-top + 75;
+    color: $grey;
+    width: 600px !important;
+}
+
+
+.control {
+    position: relative;
+    top: $from-top;
+}
+
+.control a, td a, div a {
+    color: $grey;
+    text-decoration: none;
+}
+
+.control a:hover, .container h4, td a:hover, div a:hover {
+    color: $magenta;
+}
+
+td:first-child {
+    width: 550px !important;
+    text-align: left;
+}
+
+td:first-child:hover {
+    color: $grey;
+    text-decoration: none;
+    cursor: default;
+}
+
+td:hover {
+    color: $magenta;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.form-body {
+    position: relative;
+    top: $from-top + 35;
+    width: 500px;
+}
+
+.form-controll {
+    position: relative;
+    top: $from-top + 95;
+}
+
+div a:hover {
+    cursor: pointer;
+}
