@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
     <meta charset="utf-8">
     <title>List Editor</title>
     <link rel="stylesheet" href="css/app.css">
-    <!--<link rel="stylesheet" href="vendor/bootstrap/bootstrap.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
 </head>
 <body ng-app="test">
 
@@ -13,19 +13,19 @@
             <h1>List Editor Application </h1>
         </section>
         <section class="container-fluid" ng-controller="defaultController">
-            <div class="container" >
+            <div class="container">
 
-                <div ui-view ></div>
+                <div ui-view></div>
 
             </div>
         </section>
 
-  <script type="text/javascript" src="vendor/angular/angular.js"></script>
-  <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
-
-<!--   <script type="text/javascript" src="app/config/config.ui-router.js"></script> -->
-  <script type="text/javascript" src="app/app.js"></script>
-  <script type="text/javascript" src="app/controller/controller.default.js"></script>
+        <script type="text/javascript" src="vendor/angular/angular.js"></script>
+        <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+        <script type="text/javascript" src="app/app.js"></script>
+        <script src="app/controller/controller.default.js"></script>
+        <script src="app/directives/directive.list.js"></script>
+        <script src="app/directives/directive.form.js"></script>
 
 </body>
 </html>
