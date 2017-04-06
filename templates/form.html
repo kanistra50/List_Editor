@@ -1,11 +1,12 @@
-<section>
+<div>
     <h4>Add or Edit Item</h4>
-    <div class="form-body">
-        <span>Item value: </span>
-        <input type="text" ng-model="inInput" placeholder="Enter some text..." autofocus tabindex="2"/>
+    <div class="form-body" >
+            <span>Item value: </span>
+        <input id="input" type="text" ng-model="inInput" placeholder="Enter some text..." autofocus="autofocus">
+        <script>document.getElementById("input").focus();</script>
     </div>
     <div class="form-controll">
-        <a ui-sref="list" tabindex="1"> << Go back</a>
-        <button class="btn btn-success" ng-click="save(inInput)" ui-sref="list" tabindex="3">Save</button>
+        <a ui-sref="list"> << Go back</a>
+        <button class="btn btn-success" ng-click="save(inInput)" ui-sref="list">Save</button>
     </div>
-</section>
+</div>
