@@ -6,15 +6,43 @@ body {
   margin: 0;
   background-color: darkmagenta;
   font-family: "Segoe UI Light", SansSerif, "Quicksand", sans-serif;
+  font-size: 27pt;
   color: ghostwhite;
-  padding: 1px 0;
-  box-shadow: 0 2px 10px dimgrey; }
+  padding: 15px 0;
+  box-shadow: 0 2px 10px dimgrey;
+  height: 72px; }
 
+@media screen and (max-width: 1000px) {
+  .header {
+    font-size: 60pt;
+    height: 150px; }
+
+  .container {
+    font-size: 24pt;
+    top: 25px !important; }
+
+  button {
+    font-size: 28pt !important; }
+
+  p.head-text {
+    font-size: 34pt !important; }
+
+  .control {
+    top: 0 !important; }
+
+  .form-body {
+    top: 25px !important; }
+
+  .form-controll {
+    top: 50px !important; } }
 .container {
   position: relative;
   top: 125px;
   color: dimgrey;
   width: 600px !important; }
+
+p.head-text {
+  font-size: 14pt; }
 
 .control {
   position: relative;
@@ -24,7 +52,7 @@ body {
   color: dimgrey;
   text-decoration: none; }
 
-.control a:hover, .container h4, td a:hover, div a:hover {
+.control a:hover, .container p, td a:hover, div a:hover {
   color: darkmagenta; }
 
 td:first-child {
@@ -52,3 +80,4 @@ td:hover {
 
 div a:hover {
   cursor: pointer; }
+
