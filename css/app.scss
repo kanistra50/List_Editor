@@ -6,7 +6,8 @@ $quicksand: 'Quicksand', sans-serif;
 $segoe: "Segoe UI Light", SansSerif;
 
 $from-top: 50px;
-
+$from-top-small: $from-top/2 ;
+$i: !important;
 body {
     font-family: $quicksand;
     text-align: center;
@@ -16,18 +17,43 @@ body {
     margin: 0;
     background-color: $magenta;
     font-family: $segoe, $quicksand;
+    font-size: 27pt;
     color: $white;
-    padding: 1px 0;
+    padding: 15px 0;
     box-shadow: 0 2px 10px $grey;
+    height: 72px;
+}
+
+@media screen and (max-width: 1000px) {
+    .header {
+        font-size: 60pt;
+        height: 150px;
+    }
+    .container {
+        font-size: 24pt;
+        top: $from-top-small $i;
+    }
+    button {
+        font-size: 28pt $i;}
+    p.head-text {
+        font-size: 34pt $i;}
+    .control {
+        top: 0 $i;}
+    .form-body {
+        top: $from-top-small $i;}
+    .form-controll {
+        top: $from-top $i;}
 }
 
 .container {
     position: relative;
     top: $from-top + 75;
     color: $grey;
-    width: 600px !important;
+    width: 600px $i;
 }
 
+p.head-text {
+        font-size: 14pt;}
 
 .control {
     position: relative;
@@ -39,12 +65,12 @@ body {
     text-decoration: none;
 }
 
-.control a:hover, .container h4, td a:hover, div a:hover {
+.control a:hover, .container p, td a:hover, div a:hover {
     color: $magenta;
 }
 
 td:first-child {
-    width: 550px !important;
+    width: 550px $i;
     text-align: left;
 }
 
@@ -74,3 +100,5 @@ td:hover {
 div a:hover {
     cursor: pointer;
 }
+
+
