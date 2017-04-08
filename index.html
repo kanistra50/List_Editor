@@ -12,7 +12,7 @@
         <section class="header">
             <p>List Editor Application </p>
         </section>
-        <section class="container-fluid" ng-controller="defaultController">
+        <section class="container-fluid" ng-controller="defaultCtrl">
             <div class="container">
 
                 <div ui-view></div>
@@ -23,8 +23,10 @@
         <script src="vendor/jquery/jquery-3.2.0.min.js"></script>
         <script src="vendor/angular/angular.js"></script>
         <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+
         <script src="app/app.js"></script>
-        <script src="app/controller/controller.default.js"></script>
+        <script src="app/controllers/controller.default.js"></script>
+        <script src="app/services/service.localStorage.js"></script>
         <script src="app/directives/directive.list.js"></script>
         <script src="app/directives/directive.form.js"></script>
 
