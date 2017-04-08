@@ -11,14 +11,14 @@ module
         $stateProvider
             .state('list', {
                 url: '/list',
-                template: '<div dir-list>Directive</div>'
+                template: '<div dir-list>Loading...</div>'
             })
             .state('add', {
                 url: '/list/add',
-                template: '<div dir-form>Directive</div>'
+                template: '<div dir-form>Loading...</div>'
             })
             .state('edit', {
                 url: '/list/edit/:{itemId}',
-                template: '<div dir-form>Directive</div>'
+                template: '<div dir-form>Loading...</div>'
             });
     }])
