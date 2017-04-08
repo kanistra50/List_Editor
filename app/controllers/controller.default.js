@@ -75,10 +75,7 @@ module
                 Storage.setData($scope.items);
             } else {
                 alert('Please write something !');
-
             }
-
         };
-
         console.log("Controller loaded");
     }]);
