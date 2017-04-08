@@ -13,7 +13,8 @@ module
         var data = Storage.getData();
 
         if (!data || !data[0]) {
-            // console.log(data);
+           
+// For initial loading, the prepared data from two elements
             Storage.setData([
                     {id: 12345678, value: "First clever thing"},
                     {id: 51234876, value: "Second clever thing"}
