@@ -5,7 +5,10 @@
     <title>List Editor</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>-->
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
 </head>
 <body ng-app="test">
 
@@ -15,19 +18,19 @@
         <section class="container-fluid" ng-controller="defaultCtrl">
             <div class="container">
 
-                <div ui-view></div>
+                <div ui-view>
+                    <!--<i class="fa fa-spinner fa-spin fa-2x"></i>-->
+                    Loading...
+                </div>
 
             </div>
         </section>
-    
-        <script src="vendor/angular/angular.js"></script>
-        <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+
         <script src="app/app.js"></script>
         <script src="app/controllers/controller.default.js"></script>
         <script src="app/services/service.localStorage.js"></script>
         <script src="app/directives/directive.list.js"></script>
         <script src="app/directives/directive.form.js"></script>
         <script src="vendor/jquery/jquery-3.2.0.min.js"></script>
-
 </body>
 </html>
