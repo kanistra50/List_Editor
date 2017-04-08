@@ -40,7 +40,6 @@ module
             if (confirm("Removing of string  - " + item.value +" ?")) {
                 $scope.items.splice($scope.items.indexOf(item), 1);
             }
-
             Storage.setData($scope.items);
         };
 
@@ -59,7 +58,6 @@ module
 
         $scope.save = function(text) {
             if (text) {
-
 
                 if (!Id ) {
                     var newId = getId();
