@@ -1,8 +1,11 @@
-angular.module("test", [
-    'ui.router'
-])
+/**
+ * The main app module
+ *     with Routing
+ */
+var module = angular.module("test", ['ui.router', 'storeService']);
 
-    .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider  ) {
+module
+    .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
         $urlRouterProvider.otherwise('/list');
 
         $stateProvider
@@ -18,4 +21,4 @@ angular.module("test", [
                 url: '/list/edit/:{itemId}',
                 template: '<div dir-form>Directive</div>'
             });
-    }]);
+    }])
