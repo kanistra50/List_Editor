@@ -8,9 +8,16 @@ $segoe: "Segoe UI Light", SansSerif;
 $from-top: 50px;
 $from-top-small: $from-top/2 ;
 $i: !important;
+
 body {
     font-family: $quicksand;
     text-align: center;
+}
+
+i {
+  padding-top: 4px;
+  width: 38px;
+  color: #D0D0D0;
 }
 
 .header {
@@ -100,5 +107,3 @@ td:hover {
 div a:hover {
     cursor: pointer;
 }
-
-
