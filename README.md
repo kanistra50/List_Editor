@@ -1,4 +1,4 @@
-[See demo](https://kanistra50.github.io/Smetner/)
+[See demo](https://kanistra50.github.io/List_Editor/)
 
 # List Editor
 
